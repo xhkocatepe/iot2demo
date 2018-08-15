@@ -1,0 +1,57 @@
+<mvc:View controllerName="IoT_Demo.controller.IoT" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:lab="it.designfuture.chartjs"
+	xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<IconTabBar
+					
+						expanded="false"
+						class="sapUiResponsiveContentPadding">
+						<items>
+							<IconTabFilter
+								text="Temperature and Humidity">
+									<lab:LineChartJS
+										id="line_chart"
+										datasets="{temp>/lineChart/datasets}"
+										labels="{temp>/lineChart/labels}"
+										titleDisplay="true"
+										titleText="Temperature "
+										onLegendItemClick="onLegendItemClick"
+										onLegendItemHover="onLegendItemHover"
+										onClick="onClick"
+										onHover="onHover"
+										tooltipEnabled="true"
+										onAnimationProgress="onAnimationProgress"
+										onAnimationComplete="onAnimationComplete"
+										showLines="true"
+										spanGaps="true">
+									</lab:LineChartJS>
+							</IconTabFilter>
+							
+							<IconTabFilter
+								text="Blink">
+								<lab:PieChartJS
+									id="pie_chart"
+									datasets="{temp>/pieChart/datasets}"
+									labels="{temp>/pieChart/labels}"
+									borderWidth="{temp>/pieChart/borderWidth}"
+									titleDisplay="true"
+									titleText="Pie Chart Example"
+									onLegendItemClick="onLegendItemClick"
+									onLegendItemHover="onLegendItemHover"
+									onClick="onClick"
+									onHover="onHover"
+									tooltipEnabled="true"
+									onAnimationProgress="onAnimationProgress"
+									onAnimationComplete="onAnimationComplete">
+								</lab:PieChartJS>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
